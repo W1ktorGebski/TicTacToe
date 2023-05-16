@@ -10,11 +10,13 @@ TrwaGra = True
 #Plansza do gry
 
 def PlanszaDoGry(Plansza):
+    print('┌───┬───┬───┐')
     print('│' + Plansza[0] + ' │' + Plansza[1] + ' │' + Plansza[2] + ' │')
     print('├───┼───┼───┤')
     print('│' + Plansza[3] + ' │' + Plansza[4] + ' │' + Plansza[5] + ' │')
     print('├───┼───┼───┤')
-    print('│' + Plansza[6] + ' │' + Plansza[7] + ' │' + Plansza[8] + ' │') 
+    print('│' + Plansza[6] + ' │' + Plansza[7] + ' │' + Plansza[8] + ' │')
+    print('└───┴───┴───┘')
 
 #Wpisanie koordynatow przez gracza
 
@@ -26,6 +28,12 @@ def WprowadzLiczbe(Plansza):
         print('Podana liczba nie jest w zakresie od 1-9 lub podana liczba jest juz zajeta')
 
 #Sprawdzenie czy dany ruch daje zwyciestwo lub remis
+
+def WygranaWPoziomie(Plansza):
+    global Zwyciezca
+    if Plansza[0] == Plansza[1] == Plansza[2] and Plansza[1] != ' -':
+        Zwyciezca = Plansza[0]
+        return True
 
 #Zmiana gracza
 
