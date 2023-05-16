@@ -31,8 +31,14 @@ def WprowadzLiczbe(Plansza):
 
 def WygranaWPoziomie(Plansza):
     global Zwyciezca
-    if Plansza[0] == Plansza[1] == Plansza[2] and Plansza[1] != ' -':
+    if Plansza[0] == Plansza[1] == Plansza[2] and Plansza[0] != ' -':
         Zwyciezca = Plansza[0]
+        return True
+    elif Plansza[3] == Plansza[4] == Plansza[5] and Plansza[3] != ' -':
+        Zwyciezca = Plansza[3]
+        return True
+    elif Plansza[6] == Plansza[7] == Plansza[8] and Plansza[6] != ' -':
+        Zwyciezca = Plansza[6]
         return True
 
 #Zmiana gracza
