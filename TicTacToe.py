@@ -41,6 +41,27 @@ def WygranaWPoziomie(Plansza):
         Zwyciezca = Plansza[6]
         return True
 
+def WygranaWPionie(Plansza):
+    global Zwyciezca
+    if Plansza[0] == Plansza[3] == Plansza[6] and Plansza[0] != ' -':
+        Zwyciezca = Plansza[0]
+        return True
+    elif Plansza[1] == Plansza[4] == Plansza[7] and Plansza[1] != ' -':
+        Zwyciezca = Plansza[1]
+        return True
+    elif Plansza[2] == Plansza[5] == Plansza[8] and Plansza[2] != ' -':
+        Zwyciezca = Plansza[2]
+        return True
+
+def WygranaPoskosie(Plansza):
+    global Zwyciezca
+    if Plansza[0] == Plansza[4] == Plansza[8] and Plansza[0] != ' -':
+        Zwyciezca = Plansza[0]
+        return True
+    elif Plansza[2] == Plansza[4] == Plansza[6] and Plansza[2] != ' -':
+        Zwyciezca = Plansza[0]
+        return True
+
 #Zmiana gracza
 
 #Sprawdzenie czy dany ruch daje zwyciestwo lub remis
