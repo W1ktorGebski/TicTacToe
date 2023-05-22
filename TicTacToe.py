@@ -62,6 +62,13 @@ def WygranaPoskosie(Plansza):
         Zwyciezca = Plansza[0]
         return True
 
+def Remis(Plansza):
+    global TrwaGra
+    if ' -' not in Plansza:
+        PlanszaDoGry(Plansza)
+        print('Remis!')
+        TrwaGra = False
+
 #Zmiana gracza
 
 #Sprawdzenie czy dany ruch daje zwyciestwo lub remis
