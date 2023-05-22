@@ -1,3 +1,5 @@
+import random
+ 
 #Tic Tac Toe
 
 Plansza = [' -',' -',' -',
@@ -25,7 +27,7 @@ def WprowadzLiczbe(Plansza):
     if i >= 1 and i <= 9 and Plansza[i-1] == ' -':
         Plansza[i-1] = ObecnyGracz
     else:
-        print('Podana liczba nie jest w zakresie od 1-9 lub podana liczba jest juz zajeta')
+        print('Podana liczba nie jest w zakresie od 1-9 lub jest juz zajeta')
 
 #Sprawdzenie czy dany ruch daje zwyciestwo lub remis
 
@@ -85,6 +87,14 @@ def ZmianaGracza():
     else:
         ObecnyGracz = ' X'
 
+#Gra z komputerem
+
+def GraZKomputerem(Plansza):
+    while ObecnyGracz == ' O':
+        pozycja = random.randint(0, 8)
+        if Plansza[pozycja] == ' -':
+            Plansza[pozycja] = ' O'
+            ZmianaGracza()
 
 #Sprawdzenie czy dany ruch daje zwyciestwo lub remis
 
@@ -94,3 +104,6 @@ while TrwaGra:
     Wygrana(Plansza)
     Remis(Plansza)
     ZmianaGracza()
+    GraZKomputerem(Plansza)
+    Wygrana(Plansza)
+    Remis(Plansza)
