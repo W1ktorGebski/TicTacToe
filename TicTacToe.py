@@ -69,10 +69,28 @@ def Remis(Plansza):
         print('Remis!')
         TrwaGra = False
 
+def Wygrana(Plansza):
+    global TrwaGra
+    if WygranaWPoziomie(Plansza) or WygranaWPionie(Plansza) or WygranaPoskosie(Plansza):
+        PlanszaDoGry(Plansza)
+        print('Wygrywa ' + Zwyciezca)
+        TrwaGra = False
+
 #Zmiana gracza
+
+def ZmianaGracza():
+    global ObecnyGracz
+    if ObecnyGracz == ' X':
+        ObecnyGracz = ' O'
+    else:
+        ObecnyGracz = ' X'
+
 
 #Sprawdzenie czy dany ruch daje zwyciestwo lub remis
 
 while TrwaGra:
     PlanszaDoGry(Plansza)
     WprowadzLiczbe(Plansza)
+    Wygrana(Plansza)
+    Remis(Plansza)
+    ZmianaGracza()
